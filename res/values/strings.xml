@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ghost</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_hint">Enter your next letter:</string>
+    <string name="OK">OK</string>    
+    <string name="must_be_letter">User move must be a letter.</string>
+    <string name="play_game">Play</string>
+    <string name="instructions">Tutorial</string>
+    <string name="how_to_play">How to Play:</string>
+    <string name="tutorial">Each player (you vs. your infinitely smarter and more superior cell phone) 
+        takes turns giving letters that form a word. The last person to give a letter that forms a 
+        complete word at least three letters long loses. If a person gives a letter so that a word cannot 
+        be formed from the letters, the other player can challenge and the person who gave the letter loses. 
+        Have fun!</string>    
+	<string name="back_button">Back</string>
+	<string name="game_over">Game Over</string>
+	<string name="play_again">Play Again</string>
+	<string name="main_menu">Main Menu</string>
+	<string name="definition">Definition</string>
+	<string name="win">You Win!</string>
+	<string name="lose">Try Again</string>
+	<string name="completed_word">%1$s is a word.</string>
+	<string name="impossible_word">The letters %1$s cannot form a word. The computer was going for %2$s.</string>
+	<string name="sample">Auxiliart cannot form a word. The computer was going for auxiliary.</string>
+</resources>
