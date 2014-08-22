@@ -11,13 +11,13 @@ public class ComputerAI {
 	@SuppressWarnings("unchecked")
 	public static String chooseLetter(Context c, String currentWord){
 //		stallComputer(1500);
-		Random mRandom = new Random();
+		Random random = new Random();
 		ArrayList<String> possibleWords = (ArrayList<String>) ListOfWords
 				.get(c)
 				.getPossibleWords(currentWord)
 				.clone();
 		if (possibleWords.size() == 0) {
-			return GhostFragment.challenge; // replace this with a final constant later
+			return GhostFragment.challenge;
 		} else {
 			int fullWordLength = currentWord.length() + 1;
 			int numberOfWords = possibleWords.size();
@@ -34,10 +34,20 @@ public class ComputerAI {
 						.getPossibleWords(currentWord)
 						.clone();
 			}
-			randomWord = possibleWords.get(mRandom.nextInt(possibleWords.size()));
-//			System.out.println(randomWord);
+			randomWord = possibleWords.get(random.nextInt(possibleWords.size()));
 			return randomWord.substring(currentWord.length(), currentWord.length() + 1);
 		}
+	}
+	@SuppressWarnings("unchecked")
+	public static String chooseLetter(Context c) {
+		Random random = new Random();
+		char letter = (char) (random.nextInt(26) + 'a');
+		ArrayList<String> possibleWords = (ArrayList<String>) ListOfWords
+				.get(c)
+				.getPossibleWords(Character.toString(letter))
+				.clone();
+		randomWord = possibleWords.get(random.nextInt(possibleWords.size()));
+		return Character.toString(letter);
 	}
 	
 	private static void stallComputer(int milliseconds) {

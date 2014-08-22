@@ -24,18 +24,20 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f09000e;
+        public static final int action_settings=0x7f090010;
         public static final int backButton=0x7f09000c;
-        public static final int button2=0x7f09000d;
+        public static final int button2=0x7f09000f;
         public static final int computer_response=0x7f090009;
         public static final int current_word=0x7f090008;
-        public static final int definition=0x7f090005;
+        public static final int definition=0x7f090004;
         public static final int fragmentContainer=0x7f090000;
-        public static final int game_reason=0x7f090002;
-        public static final int game_status=0x7f090001;
-        public static final int main_menu_button=0x7f090004;
+        public static final int game_reason=0x7f090001;
+        public static final int imageButton1=0x7f090005;
+        public static final int instructions_button=0x7f09000e;
+        public static final int main_menu_button=0x7f090003;
         public static final int ok_button=0x7f090007;
-        public static final int play_again_button=0x7f090003;
+        public static final int play_again_button=0x7f090002;
+        public static final int restart_button=0x7f09000d;
         public static final int textView1=0x7f09000a;
         public static final int textView2=0x7f09000b;
         public static final int user_input=0x7f090006;
@@ -45,7 +47,8 @@ public final class R {
         public static final int game_over_dialog=0x7f030001;
         public static final int ghost_fragment=0x7f030002;
         public static final int instructions_fragment=0x7f030003;
-        public static final int title_fragment=0x7f030004;
+        public static final int pause_dialog=0x7f030004;
+        public static final int title_fragment=0x7f030005;
     }
     public static final class menu {
         public static final int ghost=0x7f080000;
@@ -91,9 +94,12 @@ public final class R {
         public static final int instructions=0x7f060006;
         public static final int lose=0x7f06000f;
         public static final int main_menu=0x7f06000c;
+        public static final int must_be_length_one=0x7f060013;
         public static final int must_be_letter=0x7f060004;
+        public static final int pause=0x7f060014;
         public static final int play_again=0x7f06000b;
         public static final int play_game=0x7f060005;
+        public static final int restart=0x7f060015;
         public static final int sample=0x7f060012;
         public static final int tutorial=0x7f060008;
         public static final int user_hint=0x7f060002;

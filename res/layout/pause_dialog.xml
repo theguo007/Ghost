@@ -5,20 +5,12 @@
     android:orientation="vertical"
     android:gravity="center" >
 
-    <TextView
-        android:id="@+id/game_reason"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:textSize="15sp" />
-
     <Button
-        android:id="@+id/play_again_button"
+        android:id="@+id/restart_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="@string/play_again" />
+        android:layout_marginTop="10dp"
+        android:text="@string/restart" />
 
     <Button
         android:id="@+id/main_menu_button"
@@ -27,10 +19,10 @@
         android:text="@string/main_menu" />
 
     <Button
-        android:id="@+id/definition"
+        android:id="@+id/instructions_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/definition" />
+        android:layout_marginBottom="10dp"
+        android:text="@string/instructions" />
 
 </LinearLayout>

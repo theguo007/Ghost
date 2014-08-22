@@ -24,4 +24,7 @@
 	<string name="completed_word">%1$s is a word.</string>
 	<string name="impossible_word">The letters %1$s cannot form a word. The computer was going for %2$s.</string>
 	<string name="sample">Auxiliart cannot form a word. The computer was going for auxiliary.</string>
+	<string name="must_be_length_one">User move must be only one letter</string>
+	<string name="pause">Paused</string>
+	<string name="restart">Restart</string>	
 </resources>
