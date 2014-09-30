@@ -32,7 +32,7 @@ public class GhostFragment extends Fragment {
 	public static final String completedLose = "You formed a word. You lose.";
 	public static final String urlBeginning = "http://www.merriam-webster.com/dictionary/";
 	private String mUserTyping;
-	
+	private Boolean isGameOver = false;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState) {
@@ -122,7 +122,7 @@ public class GhostFragment extends Fragment {
 			} else {
 				updateCurrentWord(mCurrentWord.getText() + computerMove);
 				if (isWord(mCurrentWord.getText()
-					.toString())) {					 
+					.toString())) {					
 					gameOver(true, mCurrentWord.getText().toString(), null);
 				 }
 			 }
@@ -130,6 +130,7 @@ public class GhostFragment extends Fragment {
 	}
 	
 	private void gameOver(Boolean isWin, String definition, String currentWord) {
+		isGameOver = true;
 		mUserInput.setFocusable(false);
 		mOkButton.setEnabled(false);
 		InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(
@@ -153,5 +154,12 @@ public class GhostFragment extends Fragment {
 			}
 		}
 		return false;
+	}
+	@Override
+	public void onStop() {
+		super.onStop();
+		if (isGameOver) {
+			getActivity().finish();
+		}
 	}
 }

@@ -38,8 +38,9 @@ public class PauseDialog extends DialogFragment {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getActivity(),InstructionsActivity.class);
-				startActivity(i);			
+				Intent i = new Intent(getActivity(),TutorialPager.class);
+				startActivity(i);	
+				getActivity().finish();
 			}
 		});
 		return new AlertDialog.Builder(getActivity())

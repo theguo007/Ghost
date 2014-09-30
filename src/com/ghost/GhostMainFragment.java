@@ -35,7 +35,7 @@ public class GhostMainFragment extends Fragment {
 			
 			@Override
 			public void onClick(View v) {
-				Intent i = new Intent(getActivity(),InstructionsActivity.class);
+				Intent i = new Intent(getActivity(),TutorialPager.class);
 				startActivity(i);
 			}
 		});

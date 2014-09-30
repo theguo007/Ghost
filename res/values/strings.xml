@@ -9,11 +9,6 @@
     <string name="play_game">Play</string>
     <string name="instructions">Tutorial</string>
     <string name="how_to_play">How to Play:</string>
-    <string name="tutorial">Each player (you vs. your infinitely smarter and more superior cell phone) 
-        takes turns giving letters that form a word. The last person to give a letter that forms a 
-        complete word at least three letters long loses. If a person gives a letter so that a word cannot 
-        be formed from the letters, the other player can challenge and the person who gave the letter loses. 
-        Have fun!</string>    
 	<string name="back_button">Back</string>
 	<string name="game_over">Game Over</string>
 	<string name="play_again">Play Again</string>
@@ -27,4 +22,12 @@
 	<string name="must_be_length_one">User move must be only one letter</string>
 	<string name="pause">Paused</string>
 	<string name="restart">Restart</string>	
+	<string name="tut1">Each player (you vs. your infinitely smarter and more superior cell phone) takes turns giving letters to form a word while avoiding being the last person to complete the word. Say the letter sequence "Ghos" has been made. (Swipe Right)</string>
+	<string name="tut2">If it is your turn, playing a T would cause you to lose because that forms the complete word Ghost.</string>
+	<string name="tut3">On the other hand, you cannot play letters that make it impossible for the word to continue playing. Playing an X would cause you to lose too.</string>
+	<string name="tut4">Force the computer to play a letter that completes a word to win. Remember that words must be three letters or more.</string>
+	<string name="ex1">Ghos</string>
+	<string name="ex2">Ghost</string>
+	<string name="ex3">Ghosx</string>
+	<string name="ex4">Have Fun!</string>
 </resources>

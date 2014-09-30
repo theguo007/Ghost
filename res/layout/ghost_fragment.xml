@@ -3,21 +3,13 @@
     android:layout_height="match_parent"
     android:layout_marginTop="5dp"
     android:orientation="vertical" >
-
-    <ImageButton
-        android:id="@+id/imageButton1"
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:layout_gravity="right"
-        android:layout_margin="5dp"
-        android:src="@android:drawable/ic_media_pause" />
-    
+ 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal" >
 
 	    <EditText
@@ -26,16 +18,23 @@
 	        android:layout_height="wrap_content"
 	        android:layout_weight="5"
 	        android:hint="@string/user_hint"/>
-	
-	    <Button
-	        android:id="@+id/ok_button"
+		<ImageButton
+	        android:id="@+id/imageButton1"
 	        android:layout_width="0dip"
 	        android:layout_height="wrap_content"
 	        android:layout_marginLeft="3dp"
 	        android:layout_weight="1"
-	        android:text="@string/OK" />
-
+	        android:src="@android:drawable/ic_media_pause" />
+	    
 	</LinearLayout>
+	
+	<Button
+	        android:id="@+id/ok_button"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="15dp"
+        	android:layout_marginRight="15dp"	        
+	        android:text="@string/OK" />
 	
     <TextView
         android:id="@+id/current_word"
