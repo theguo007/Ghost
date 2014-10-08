@@ -19,8 +19,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingLeft="40dp"
-        android:paddingRight="40dp"
+        android:paddingLeft="42dp"
+        android:paddingRight="42dp"
         android:text="@string/play_game"
         android:textSize="30sp" />
 
@@ -29,9 +29,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:paddingLeft="19dp"
-        android:paddingRight="19dp"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
         android:text="@string/instructions"
         android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30sp"
+        android:text="@string/stats" />
 
 </LinearLayout>

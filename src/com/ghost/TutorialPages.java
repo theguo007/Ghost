@@ -39,18 +39,28 @@ public class TutorialPages extends Fragment{
 		mTutorialExample = (TextView) v.findViewById(R.id.instructionExample);
 		mTutorialExample.setText(examples[index]);
 		mPlay = (Button) v.findViewById(R.id.play_again_button);
-		if (index != 3) {
+		if (index != 3 && index != 0) {
 			mPlay.setVisibility(View.GONE);
+		} else if (index == 3) {
+			mPlay.setText(R.string.play_game);
+			mPlay.setOnClickListener(new View.OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Intent i = new Intent(getActivity(),GhostActivity.class);
+					startActivity(i);
+					getActivity().finish();
+				}
+			});
+		} else {
+			mPlay.setText(R.string.back_button);
+			mPlay.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					getActivity().finish();
+				}
+			});
 		}
-		mPlay.setOnClickListener(new View.OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(getActivity(),GhostActivity.class);
-				startActivity(i);
-				getActivity().finish();
-			}
-		});
 		return v;
 		
 	}

@@ -14,6 +14,7 @@ public class GameOverDialog extends DialogFragment {
 	private Button mPlayAgain;
 	private Button mMainMenu;
 	private Button mDefinition;	
+	private Button mStatsButton;
 	private TextView mExplanation;
 	private String currentWord;
 	private String definitionWord;
@@ -76,6 +77,15 @@ public class GameOverDialog extends DialogFragment {
 				Intent browserIntent = new Intent(Intent.ACTION_VIEW);
 				browserIntent.setData(Uri.parse(url));
 				getActivity().startActivity(browserIntent);				
+			}
+		});
+		mStatsButton = (Button) v.findViewById(R.id.button5);
+		mStatsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 Intent i = new Intent(getActivity(), StatsActivity.class);
+				 startActivity(i);
 			}
 		});
 		if (getArguments().getBoolean(winStatus)) {

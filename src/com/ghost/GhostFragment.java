@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 public class GhostFragment extends Fragment {
 	private EditText mUserInput;
+	private Stats mStats;
 	private Button mOkButton;	
 	private TextView mCurrentWord;
 	private ImageButton mMenuButton;
@@ -38,6 +39,7 @@ public class GhostFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);                        
         getActivity().setTitle(R.string.app_name);
+        mStats = Stats.get(getActivity());
     }
 	
 	@TargetApi(11)
@@ -61,6 +63,7 @@ public class GhostFragment extends Fragment {
 					 if (mUserTyping.length() == 1) {
 						 char mUserMove = mUserTyping.toLowerCase()
 								 .charAt(0);
+						 mUserMove = Character.toLowerCase(mUserMove);
 						 if (mUserMove >= 'a' && mUserMove <= 'z') {
 							 makeComputerMove();
 							 mUserInput.setText("");
@@ -110,7 +113,7 @@ public class GhostFragment extends Fragment {
 	}
 	
 	private void makeComputerMove() {		
-		updateCurrentWord(mCurrentWord.getText() + mUserTyping);		
+		updateCurrentWord(mCurrentWord.getText() + mUserTyping.toLowerCase());		
 		mUserTyping = null;
 		if (isWord(mCurrentWord.getText()
 			.toString())) {			 
@@ -131,6 +134,15 @@ public class GhostFragment extends Fragment {
 	
 	private void gameOver(Boolean isWin, String definition, String currentWord) {
 		isGameOver = true;
+		if (isWin && currentWord == null){
+			mStats.updateWin(definition);
+		} else if (!isWin && currentWord == null){
+			mStats.updateLoss(definition);
+		} else if (isWin) {
+			mStats.updateWin("d");
+		} else {
+			mStats.updateLoss("d");
+		}
 		mUserInput.setFocusable(false);
 		mOkButton.setEnabled(false);
 		InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(

@@ -13,6 +13,7 @@ import android.widget.Button;
 public class GhostMainFragment extends Fragment {
 	private Button mPlayButton;
 	private Button mTutorialButton;
+	private Button mStatsButton;
 	
 	@TargetApi(11)
 	@Override
@@ -37,6 +38,16 @@ public class GhostMainFragment extends Fragment {
 			public void onClick(View v) {
 				Intent i = new Intent(getActivity(),TutorialPager.class);
 				startActivity(i);
+			}
+		});
+				
+		mStatsButton = (Button) v.findViewById(R.id.button3);
+		mStatsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 Intent i = new Intent(getActivity(), StatsActivity.class);
+				 startActivity(i);
 			}
 		});
 		return v;

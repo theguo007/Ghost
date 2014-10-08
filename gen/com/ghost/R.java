@@ -25,25 +25,35 @@ public final class R {
         public static final int letters=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f060012;
-        public static final int backButton=0x7f06000e;
-        public static final int button2=0x7f06000f;
-        public static final int computer_response=0x7f06000a;
-        public static final int current_word=0x7f060009;
+        public static final int action_settings=0x7f06001c;
+        public static final int backButton=0x7f060016;
+        public static final int button2=0x7f060018;
+        public static final int button3=0x7f060019;
+        public static final int button4=0x7f06000e;
+        public static final int button5=0x7f060006;
+        public static final int computer_response=0x7f06000b;
+        public static final int current_streak=0x7f060010;
+        public static final int current_word=0x7f06000a;
         public static final int definition=0x7f060005;
         public static final int fragmentContainer=0x7f060001;
         public static final int game_reason=0x7f060002;
-        public static final int imageButton1=0x7f060007;
-        public static final int instructionExample=0x7f060011;
-        public static final int instructionText=0x7f060010;
-        public static final int instructions_button=0x7f06000c;
+        public static final int imageButton1=0x7f060008;
+        public static final int instructionExample=0x7f06001b;
+        public static final int instructionText=0x7f06001a;
+        public static final int instructions_button=0x7f06000d;
+        public static final int longest_losing_streak=0x7f060014;
+        public static final int longest_winning_streak=0x7f060013;
+        public static final int longest_word=0x7f060015;
         public static final int main_menu_button=0x7f060004;
-        public static final int ok_button=0x7f060008;
+        public static final int ok_button=0x7f060009;
         public static final int play_again_button=0x7f060003;
-        public static final int restart_button=0x7f06000b;
-        public static final int textView1=0x7f06000d;
-        public static final int user_input=0x7f060006;
+        public static final int restart_button=0x7f06000c;
+        public static final int textView1=0x7f060017;
+        public static final int total_losses=0x7f060012;
+        public static final int total_wins=0x7f060011;
+        public static final int user_input=0x7f060007;
         public static final int viewPager=0x7f060000;
+        public static final int win_percentage=0x7f06000f;
     }
     public static final class layout {
         public static final int activity_fragment=0x7f030000;
@@ -51,8 +61,9 @@ public final class R {
         public static final int game_over_dialog=0x7f030002;
         public static final int ghost_fragment=0x7f030003;
         public static final int pause_dialog=0x7f030004;
-        public static final int title_fragment=0x7f030005;
-        public static final int tutorial_page=0x7f030006;
+        public static final int stats_sheet=0x7f030005;
+        public static final int title_fragment=0x7f030006;
+        public static final int tutorial_page=0x7f030007;
     }
     public static final class menu {
         public static final int ghost=0x7f090000;
@@ -109,6 +120,7 @@ public final class R {
         public static final int play_game=0x7f070005;
         public static final int restart=0x7f070014;
         public static final int sample=0x7f070011;
+        public static final int stats=0x7f07001d;
         public static final int tut1=0x7f070015;
         public static final int tut2=0x7f070016;
         public static final int tut3=0x7f070017;

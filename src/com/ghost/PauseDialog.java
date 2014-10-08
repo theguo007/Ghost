@@ -12,6 +12,7 @@ public class PauseDialog extends DialogFragment {
 	private Button mRestart;
 	private Button mMainMenu;
 	private Button mTutorial;
+	private Button mStatsButton;
 	
 	public Dialog onCreateDialog(Bundle savedInstanceState) {
 		View v = getActivity().getLayoutInflater().inflate(R.layout.pause_dialog, null);
@@ -39,8 +40,16 @@ public class PauseDialog extends DialogFragment {
 			@Override
 			public void onClick(View v) {
 				Intent i = new Intent(getActivity(),TutorialPager.class);
-				startActivity(i);	
-				getActivity().finish();
+				startActivity(i);					
+			}
+		});
+		mStatsButton = (Button) v.findViewById(R.id.button4);
+		mStatsButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				 Intent i = new Intent(getActivity(), StatsActivity.class);
+				 startActivity(i);
 			}
 		});
 		return new AlertDialog.Builder(getActivity())

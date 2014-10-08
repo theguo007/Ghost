@@ -22,7 +22,13 @@
         android:id="@+id/instructions_button"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
         android:text="@string/instructions" />
+    
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="@string/stats" />
 
 </LinearLayout>
