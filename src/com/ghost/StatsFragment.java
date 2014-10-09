@@ -1,5 +1,9 @@
 package com.ghost;
 
+import java.io.IOException;
+
+import org.json.JSONException;
+
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
@@ -23,7 +27,15 @@ public class StatsFragment extends Fragment {
 	
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		mStats = Stats.get(getActivity());
+		try {
+			mStats = Stats.get(getActivity());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@TargetApi(Build.VERSION_CODES.HONEYCOMB)

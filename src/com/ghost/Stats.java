@@ -1,24 +1,58 @@
 package com.ghost;
 
-import android.content.Context;
+import java.io.IOException;
 
-public class Stats {
-	private Context mAppContext;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import android.content.Context;
+import android.util.Log;
+
+public class Stats {	
+	public Context mAppContext;
 	public static Stats sStats;
-	private int currentStreak = 0;
-	private int longestWinningStreak = 0;
-	private int longestLosingStreak = 0;
-	private int totalWins = 0;
-	private int totalLosses = 0;
-	private String longestWord = " ";
+	private static final String TAG = "STATS";
+    private static final String FILENAME = "stats.json";
+	private int currentStreak;
+	private int longestWinningStreak;
+	private int longestLosingStreak;
+	private int totalWins;
+	private int totalLosses;
+	private String longestWord;
+	public final String JSONLW = "longest word";
+	public final String JSONLWS = "longest winning streak";
+	public final String JSONLLS = "longest losing streak";
+	public final String JSONCS = "computer science";
+	public final String JSONTW = "totwl wins";
+	public final String JSONTL = "total losses";
+	JSONSerializer mSerializer;
 	
-	private Stats(Context appContext) {
-		mAppContext = appContext;  
+	private Stats(Context AppContext) {	
+		mSerializer = new JSONSerializer(AppContext, FILENAME);
+       	try {
+			JSONObject yup = mSerializer.loadStats();
+			longestWord = yup.getString(JSONLW);
+			totalWins = yup.getInt(JSONTW);
+			totalLosses = yup.getInt(JSONTL);
+			currentStreak = yup.getInt(JSONCS);
+			longestWinningStreak = yup.getInt(JSONLWS);
+			longestLosingStreak = yup.getInt(JSONLLS);
+		} catch (Exception e) {
+			currentStreak = 0;
+	   		longestWinningStreak = 0;
+	   		longestLosingStreak = 0;
+	   		totalWins = 0;
+	   		totalLosses = 0;
+	   		longestWord = " ";
+			Log.e(TAG, "Error loading stats: ", e);
+		}     
+       	mAppContext = AppContext;  
 	}
 	
-	public static Stats get(Context c) {
+	public static Stats get(Context c) throws IOException, JSONException {
+		
         if (sStats == null) {
-            sStats = new Stats(c.getApplicationContext());
+        	sStats = new Stats(c);
         }
         return sStats;
     }
@@ -74,7 +108,6 @@ public class Stats {
 	}
 
 	public String getLongestWord() {
-		// TODO Auto-generated method stub
 		return longestWord;
 	}
 	
@@ -85,4 +118,24 @@ public class Stats {
 			return (totalWins * 100)/ (totalLosses + totalWins);
 		}
 	}
+	public JSONObject toJSON() throws JSONException {
+        JSONObject json = new JSONObject();
+        json.put(JSONLW, longestWord);
+        json.put(JSONCS, currentStreak);
+        json.put(JSONLWS, longestWinningStreak);
+        json.put(JSONLLS, longestLosingStreak);
+        json.put(JSONTW, totalWins);
+        json.put(JSONTL, totalLosses);
+        return json;
+	}
+	public boolean saveStats() {
+        try {
+            mSerializer.saveStats(sStats);
+            Log.d(TAG, "crimes saved to file");
+            return true;
+        } catch (Exception e) {
+            Log.e(TAG, "Error saving crimes: ", e);
+            return false;
+        }
+    }
 }

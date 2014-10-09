@@ -57,13 +57,12 @@ public final class R {
     }
     public static final class layout {
         public static final int activity_fragment=0x7f030000;
-        public static final int border=0x7f030001;
-        public static final int game_over_dialog=0x7f030002;
-        public static final int ghost_fragment=0x7f030003;
-        public static final int pause_dialog=0x7f030004;
-        public static final int stats_sheet=0x7f030005;
-        public static final int title_fragment=0x7f030006;
-        public static final int tutorial_page=0x7f030007;
+        public static final int game_over_dialog=0x7f030001;
+        public static final int ghost_fragment=0x7f030002;
+        public static final int pause_dialog=0x7f030003;
+        public static final int stats_sheet=0x7f030004;
+        public static final int title_fragment=0x7f030005;
+        public static final int tutorial_page=0x7f030006;
     }
     public static final class menu {
         public static final int ghost=0x7f090000;

@@ -1,7 +1,10 @@
 package com.ghost;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+
+import org.json.JSONException;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -39,7 +42,15 @@ public class GhostFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);                        
         getActivity().setTitle(R.string.app_name);
-        mStats = Stats.get(getActivity());
+        try {
+			mStats = Stats.get(getActivity());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 	
 	@TargetApi(11)
@@ -174,4 +185,10 @@ public class GhostFragment extends Fragment {
 			getActivity().finish();
 		}
 	}
+	
+	@Override
+    public void onPause() {
+        super.onPause();
+        mStats.saveStats();
+    }
 }
