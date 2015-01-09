@@ -96,14 +96,20 @@ public class ListOfWords {
     	} else {
     		int numberOfWords = mPossibleWords.size();
     		int index = 0;
+    		ArrayList<String> newWords = new ArrayList<String>();
     		for (int i = 0; i < numberOfWords; i++) {
     			String word = mPossibleWords.get(index);
     			if (word.startsWith(mCurrentWord)) {
-    				index++;
+    				newWords.add(word);
     			} else {
-    				mPossibleWords.remove(index);
+    				if (!newWords.isEmpty()) {
+    					mPossibleWords = newWords;
+    					break;
+    				}
     			}
+    			index++;
     		}
+    		mPossibleWords = newWords;
     	}
     }
     
